@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "title": "Community Charity Drive",
+      "date": "2025-03-15",
+      "location": "Downtown Center",
+      "category": "Charity",
+      "description": "A charity event to support local families in need."
+    },
+    {
+      "id": 2,
+      "title": "Interfaith Prayer Gathering",
+      "date": "2025-03-20",
+      "location": "City Park",
+      "category": "Religious",
+      "description": "An open gathering for people of all faiths to pray together."
+    },
+    {
+      "id": 3,
+      "title": "Social Mixer Night",
+      "date": "2025-03-25",
+      "location": "Community Hall",
+      "category": "Social",
+      "description": "A fun networking event to meet new people."
+    }
+  ]
+  
