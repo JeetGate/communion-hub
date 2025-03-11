@@ -1,22 +1,26 @@
+import "./index.css"; 
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Events from "./pages/Events";
+import Navbar from "./components/Navbar";
+import BackgroundAnimation from "./components/BackgroundAnimation";
+import Footer from "./components/Footer"; // Added Footer import
 
 function App() {
   return (
-    <>
-      <nav className="p-4 bg-blue-500 text-white">
-        <Link to="/" className="mr-4">Home</Link>
-        <Link to="/events">Events</Link>
-      </nav>
-
+    <div className="content">
+      <BackgroundAnimation />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
       </Routes>
-    </>
+      <Footer />
+    </div>
   );
 }
+
+
 
 export default App;
