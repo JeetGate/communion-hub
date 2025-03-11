@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import eventsData from "../data/events.json";
+import "../index.css";
+
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -71,7 +73,7 @@ const Events = () => {
       </div>
 
       {/* Enhanced Event Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="events-container">
         {filteredEvents.map((event, index) => (
           <div
             key={index}
@@ -93,7 +95,7 @@ const Events = () => {
 
       {/* Add New Event Section */}
       <h2 className="text-xl font-semibold mt-8 text-white">Add New Event</h2>
-      <div className="mt-4 space-y-3">
+      <div className="add-event-section space-y-3">
         <input
           type="text"
           name="title"

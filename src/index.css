@@ -1,112 +1,59 @@
-/* General Body Styling */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff5e62, #ff9966);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  color: #fff;
-  min-height: 100vh;
-  overflow-y: auto; /* ✅ Fixed Scroll Issue */
-}
-
-/* Background Animation */
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Navbar Styling */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background: rgba(13, 110, 253, 0.8); 
-  backdrop-filter: blur(15px); 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Logo Styling */
-.logo a {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Navigation Links */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2rem;
-  padding: 8px 16px;
-  border-radius: 20px;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.nav-links a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
-}
-
-/* Button Styling */
-button {
-  background-color: #ff5e62;
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  margin-top: 15px;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-  background-color: #ff9966;
-  transform: scale(1.05);
-}
-
-/* Event Cards Styling (Improved for Rows) */
+/* Event Listings Styling (Improved Grid Layout) */
 .events-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ✅ Flexible row layout */
-  gap: 20px;
-  padding: 20px;
-  min-height: 100vh; /* Ensures full-screen height */
-  overflow-y: auto; /* Enables scrolling */
-  padding-bottom: 100px; /* Prevents footer from blocking content */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider cards like Communion Hub */
+  gap: 30px; /* Spacious gap for a cleaner look */
+  padding: 40px 20px;
+  justify-content: center; /* Center the content */
 }
 
+/* Enhanced Event Card Design */
 .event-card {
   background: #fff;
   color: #333;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left; /* Better alignment */
 }
 
 .event-card:hover {
-  transform: scale(1.05);
-  border-color: #ffd700;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.5); /* Glow effect */
+  border-left: 6px solid #ffd700; /* Golden accent */
 }
 
-/* Scroll Fix for Add New Event Section */
+/* Event Details for Clean Look */
+.event-card h2 {
+  font-size: 1.5rem;
+  color: #2575fc;
+  margin-bottom: 8px;
+}
+
+.event-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Category Tag Style */
+.event-card span {
+  display: inline-block;
+  background-color: #ff5e62;
+  color: #fff;
+  border-radius: 12px;
+  padding: 4px 12px;
+  font-size: 0.9rem;
+}
+
+/* Add Event Section Improvements */
 .add-event-section {
-  margin-top: 40px; 
-  padding-bottom: 60px; /* Ensures it's visible even if content overflows */
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.1); 
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer Styling */
@@ -119,40 +66,15 @@ button:hover {
   width: 100%;
 }
 
-.footer p {
-  margin: 0;
-  font-weight: bold;
-}
-
-.link-style {
-  background: none;
-  border: none;
-  color: #ffd700;
-  cursor: pointer;
-  text-decoration: underline;
-  margin: 0 10px;
-}
-
-/* Ensure Full Height for Root Container */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-#root {
-  height: 100%;
-}
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-y: auto; /* ✅ Ensures page can scroll */
-}
-
-.content-wrapper {
-  height: auto; /* Allows content to expand naturally */
-  min-height: 100vh; /* Ensures the content fills the full screen */
-  overflow-y: auto; /* ✅ Ensures scrolling works */
-  padding-bottom: 100px; /* Prevents footer from blocking content */
+/* Improved Search & Filter Box */
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  max-width: 400px; /* Consistent width for form fields */
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #2575fc;
+  background-color: #fff;
+  color: #333;
 }
