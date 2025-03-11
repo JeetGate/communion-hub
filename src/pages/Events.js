@@ -44,9 +44,12 @@ const Events = () => {
   };
 
   return (
-    <div className="p-6 overflow-y-auto h-screen">
-      <h1 className="text-3xl font-bold text-center mb-6 text-white">Event Listings</h1>
+    <div className="p-6 min-h-screen overflow-y-auto content-wrapper">
+      <h1 className="text-3xl font-bold text-center mb-6 text-white">
+        Event Listings
+      </h1>
 
+      {/* Filter & Search Section */}
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
         <input
           type="text"
@@ -72,11 +75,16 @@ const Events = () => {
         {filteredEvents.map((event, index) => (
           <div
             key={index}
-            className={`event-card border p-4 rounded-lg shadow-lg bg-white text-black transition-transform transform hover:scale-105 hover:shadow-2xl border-2 hover:border-yellow-400`}
+            className={`event-card border p-4 rounded-lg shadow-lg bg-white text-black 
+            transition-transform transform hover:scale-105 hover:shadow-2xl border-2 hover:border-yellow-400`}
           >
             <h2 className="text-xl font-semibold text-blue-600">{event.title}</h2>
-            <p className="text-gray-500">{new Date(event.date).toLocaleDateString("en-GB")} - {event.location}</p>
-            <span className={`inline-block px-3 py-1 text-sm text-white rounded-md ${getCategoryColor(event.category)}`}>
+            <p className="text-gray-500">
+              {new Date(event.date).toLocaleDateString("en-GB")} - {event.location}
+            </p>
+            <span
+              className={`inline-block px-3 py-1 text-sm text-white rounded-md ${getCategoryColor(event.category)}`}
+            >
               {event.category}
             </span>
           </div>
